@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Prash</title>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<% if (params["controller"]=="welcome" && params["action"]=="index") %>
+    <%= yield %>
+<% else %>
+    <div id="wrapper" style="margin-top:50px">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Prash</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <% if user_signed_in? %>
+              <%= render :partial => 'shared/main_menu' %>
+          <% end %>
+          <%= render :partial => 'shared/nav_menu' %>
+        </div>
+        <!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+        <% unless current_user.present? && current_user.admin? %>
+            <div id="top">
+              <div class="header-area">
+                <div id="header">
+                  <div class="panel">
+                    <h1 class="logo"><a href="<%= root_url %>">Helix Testing</a></h1>
+
+                    <div class="block">
+                      <ul class="list">
+                        <li>Nigeria’s Most Reliable Paternity Testing Service</li>
+                        <li>All DNA Testing done in the USA</li>
+                      </ul>
+                      <div class="box">
+                        <a href="#" class="btn btn-chat">Chat Online</a>
+                        <span>Questions? call</span>
+                        <a href="#" class="btn"> +234 (0) 810 683 6432</a>
+                        <span class="or">OR</span>
+                        <a href="#" class="btn add-btn">BB 25BC8A9F</a>
+                      </div>
+                      <div class="navigation">
+                        <%= link_to "buy now", new_order_path, :class => "btn-2" %>
+                        <ul id="nav">
+                          <li><a href="#" data-location="<%= root_url %>#works" class="browse-location">how it works</a>
+                          </li>
+                          <li><a href="#" data-location="<%= root_url %>#find" class="browse-location">find a store</a>
+                          </li>
+                          <li><a href="#" data-location="<%= root_url %>#lab" class="browse-location">dna labs</a></li>
+                          <li>
+                            <a href="#" data-location="<%= root_url %>#resources" class="browse-location">resources</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <%= yield %>
+
+              <div class="footer-area">
+                <div id="footer">
+                  <div class="items">
+                    <div class="box">
+                      <strong class="logo"><a href="#">Helix Testing</a></strong>
+
+                      <div class="text">
+                        <p>Helix Testing is Nigeria’s most reliable paternity testing service:
+                        <ul>
+                          <li>100% Anonymous</li>
+                          <li>100% Accurate Results</li>
+                          <li>Results available in 3-4 Working Days</li>
+                          <li>All DNA testing done in the USA</li>
+                        </ul>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="box box-2">
+                      <h3><a href="#">purchase kit</a></h3>
+                      <ul class="add-nav">
+                        <li><a href="#" data-location="<%= root_url %>#works" class="browse-location">how it works</a>
+                        </li>
+                        <li><a href="#" data-location="<%= root_url %>#find" class="browse-location">find a store</a>
+                        </li>
+                        <li><a href="#" data-location="<%= root_url %>#lab" class="browse-location">dna labs</a></li>
+                        <li><a href="#" data-location="<%= root_url %>#resources" class="browse-location">resources</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="box">
+                      <ul class="contact-list">
+                        <li>
+                          <div class="img">
+                            <img src="images/ico-07.png" width="13" height="17" alt="image description"/>
+                          </div>
+                          <span>Call +234 (0) 810 683 6432</span>
+                        </li>
+                        <li>
+                          <div class="img">
+                            <img src="images/ico-08.png" width="19" height="17" alt="image description"/>
+                          </div>
+                          <span><a href="#">Chat Online</a></span>
+                        </li>
+                        <li>
+                          <div class="img">
+                            <img src="images/ico-09.png" width="17" height="12" alt="image description"/>
+                          </div>
+                          <span>BB 25BC8A9F</span>
+                        </li>
+                      </ul>
+                      <p>Copyright &copy;2013 Helix Testing</p>
+                      <%= link_to "Legal/Privacy Policy", terms_path, :class => "link" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <% else %>
+            <%= yield %>
+        <% end %>
+      </div>
+      <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<% end %>
+</body>
+</html>
+
+<script type="application/javascript">
+    $('a.browse-location').bind("click", function () {
+        window.location = $(this).data('location');
+    });
+
+
+    $("#location_country_id, #city_country_id").change(function () {
+        var country = $(this).val();
+        var state_items = "<option value=>Select State</option>";
+        var city_items = "<option value=>Select City</option>";
+        $.ajax({
+            type: 'GET',
+            dataType: "json",
+            url: "<%= load_state_states_path %>",
+            data: { country: country},
+            success: function (data) {
+                $.each(data, function (index, items) {
+
+                    if (index == 'states') {
+                        $.each(items, function (index, item) {
+                            state_items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                        });
+                    }
+
+                    if (index == 'cities') {
+                        $.each(items, function (index, item) {
+                            city_items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                        });
+                    }
+
+                });
+                $("#location_state_id").html(state_items);
+                $("#city_state_id").html(state_items);
+                $("#location_city_id").html(city_items);
+            }
+        });
+    });
+
+    //    $("#state").change(function () {
+    //        var state = $(this).val();
+    //        var items = "<option value=>Select City</option>";
+    //        $.ajax({
+    //            type: 'GET',
+    //            dataType: "json",
+    //            url: "<%#= load_city_cities_path %>",
+    //            data: { state: state},
+    //            success: function (data) {
+    //                $.each(data, function (index, item) {
+    //                    items += "<option value='" + item.id + "'>" + item.name + "</option>";
+    //                });
+    //                $("#city").html(items);
+    //            }
+    //        });
+    //    });
+
+    $("#location_city_id").change(function () {
+        var city = $(this).val();
+        var items = "<option value=>Select Area</option>";
+        $.ajax({
+            type: 'GET',
+            dataType: "json",
+            url: "<%= load_area_areas_path %>",
+            data: { city: city},
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                });
+                $("#location_area_id").html(items);
+            }
+        });
+    });
+</script>

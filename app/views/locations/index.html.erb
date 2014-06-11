@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-lg-7">
+    <h2>Locations</h2>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover ">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location type</th>
+          <th>Country</th>
+          <th>State</th>
+          <th>City</th>
+          <th>Area</th>
+          <th>Description</th>
+          <th>Address1</th>
+          <th>Address2</th>
+          <th>Telephone1</th>
+          <th>Telephone2</th>
+          <!--<th>Whatsapp</th>-->
+          <!--<th>Bbm</th>-->
+          <!--<th>Hours operation</th>-->
+          <th>Website</th>
+          <!--<th>Kit available for purchase</th>-->
+          <!--<th>Drop off location</th>-->
+          <!--<th>Gps code</th>-->
+          <!--<th>Note</th>-->
+          <!--<th>Bank name</th>-->
+          <!--<th>Bank account holder</th>-->
+          <!--<th>Bank account number</th>-->
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @locations.each do |location| %>
+            <tr>
+              <td><%= location.name %></td>
+              <td><%= location.try(:location_type).try(:name) %></td>
+              <td><%= location.try(:country).try(:name) %></td>
+              <td><%= location.try(:state).try(:name) %></td>
+              <td><%= location.try(:city).try(:name) %></td>
+              <td><%= location.try(:area).try(:name) %></td>
+              <td><%= location.description %></td>
+              <td><%= location.address1 %></td>
+              <td><%= location.address2 %></td>
+              <td><%= location.telephone1 %></td>
+              <td><%= location.telephone2 %></td>
+              <!--<td><%= location.whatsapp %></td>-->
+              <!--<td><%= location.bbm %></td>-->
+              <!--<td><%= location.hours_operation %></td>-->
+              <td><%= location.website %></td>
+              <!--<td><%= location.kit_available_for_purchase %></td>-->
+              <!--<td><%= location.drop_off_location %></td>-->
+              <!--<td><%= location.gps_code %></td>-->
+              <!--<td><%= location.note %></td>-->
+              <!--<td><%= location.bank_name %></td>-->
+              <!--<td><%= location.bank_account_holder %></td>-->
+              <!--<td><%= location.bank_account_number %></td>-->
+              <td><%= link_to 'Show', location %></td>
+              <td><%= link_to 'Edit', edit_location_path(location) %></td>
+              <td><%= link_to 'Destroy', location, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <%= link_to 'New Location', new_location_path %>
+  </div>
+</div><!-- /.row -->
+
+

@@ -1,0 +1,18 @@
+<ul class="nav navbar-nav side-nav">
+  <% if current_user.role == 'admin' %>
+  <li <%= controller_name == 'rlcodes' ? 'class=active' : ''%>><a href="/rlcodes/index"><i class="fa fa-file"></i> PDF Data</a></li>
+  <li  <%= controller_name == 'extranet_users' ? 'class=active' : ''%>><a href="/extranet_users/index"><i class="fa fa-table"></i> RL Codes</a></li>
+  <li  <%= controller_name == 'users' ? 'class=active' : ''%>><a href="/users/index"><i class="fa fa-users"></i> Manage users</a></li>
+  <li <%= controller_name == 'profile' ? 'class=active' : ''%>><a href="/profile/index"><i class="fa fa-user"></i> Profile</a></li>
+  <li <%= controller_name == 'settings' ? 'class=active' : ''%>><a href="/settings/index"><i class="fa fa-wrench"></i> Settings</a></li>
+  <li><a href="/location_types"><i class="fa fa-wrench"></i> Location Type</a></li>
+  <li><a href="/locations"><i class="fa fa-wrench"></i> Location</a></li>
+  <li><a href="/countries"><i class="fa fa-wrench"></i> Country</a></li>
+  <li><a href="/states"><i class="fa fa-wrench"></i> State</a></li>
+  <li><a href="/cities"><i class="fa fa-wrench"></i> City</a></li>
+  <li><a href="/areas"><i class="fa fa-wrench"></i> Area</a></li>
+  <% else%>
+      <li <%= controller_name == 'results' ? 'class=active' : ''%>><a href="/results/index"><i class="fa fa-table"></i> Test Results </a></li>
+      <li <%= controller_name == 'profile' ? 'class=active' : ''%>><a href="/profile/index"><i class="fa fa-user"></i> Profile </a></li>
+  <% end%>
+</ul>

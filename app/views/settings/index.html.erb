@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h2>IMAP Settings</h2>
+    <% if @imap_ok%>
+      <p style='color:green;'>You have good IMAP Settings</p>
+    <% else%>
+      <p style='color:red;'>You have bad IMAP Settings</p>
+    <% end%>
+    <%= form_tag :action=>"update_settings" do %>
+        <div class="form-group">
+          <label for='imap_server'>IMAP Server</label>
+          <%= text_field_tag :imap_server, nil, :value => Settings.imap_server, :class=> "form-control", :placeholder=>"Name" %>
+        </div>
+        <div class="form-group">
+          <label for='email'>Email</label>
+          <%= text_field_tag :imap_email, nil, :value => Settings.imap_email, :class=> "form-control", :placeholder=>"example@example.com" %>
+        </div>
+        <div class="form-group">
+          <label for='password'>Password</label>
+          <%= text_field_tag :imap_password, nil, :value => Settings.imap_password, :class=> "form-control", :placeholder=>"Password" %>
+        </div>
+        <div class="form-group">
+          <label for='checkbox'>SSL</label>
+          <%= check_box_tag :imap_ssl, nil, (Settings.imap_ssl ? Settings.imap_ssl == 1 : false) %>
+        </div>
+        <div class='form-actions'>
+          <button type="submit" class="btn btn-default">Save</button>
+        </div>
+    <% end %>
+  </div>
+</div><!-- /.row -->

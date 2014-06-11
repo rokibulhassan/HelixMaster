@@ -1,0 +1,2 @@
+module RlcodesHelper
+end

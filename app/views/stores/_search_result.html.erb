@@ -1,0 +1,14 @@
+<% if stores.present? %>
+    <% stores.each do |store| %>
+        <li>
+          <a href="#" class="store"><%= store.try(:name) %></a>
+          <address style="margin-bottom: 0px !important;"><%= "#{store.try(:address)}" %> <br/>
+            <%= "#{store.try(:city).try(:name)} #{store.try(:gps_code)}" %></address>
+          <a href="#" class="btn-view">View on Map</a>
+        </li>
+    <% end %>
+<% else %>
+    <li>
+      There is no store in given criteria. Please search again.
+    </li>
+<% end %>

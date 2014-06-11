@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-lg-8">
+    <h2>Manage Extranet Users</h2>
+    <p id="notice"><%= flash[:notice] %><%= flash[:error] %></p>
+    <%= form_tag '/extranet_users/upload_users', multipart: true do %>
+      <div class="form-group">
+        <label>Upload Extranet Users</label><br>
+        <%= file_field_tag 'file', :accept => 'text/csv', :multiple => false, :style=>"display:inline;" %>
+        <%= submit_tag "Submit", :style=>"display:inline;" %>
+      </div>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th>RL code </th>
+          <th>Viewable code </th>
+          <th>Password</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @extranet_users.each do |extranet_user| %>
+          <tr>
+            <td><input type="text" value="<%= extranet_user.rl_code %>" id="rlcode_<%=extranet_user.id%>"></td>
+            <td><%= extranet_user.viewable_code %></td>
+            <td><%= extranet_user.password %></td>
+            <td>
+              <%= link_to 'javascript:void(0)', :onclick => "$.ajax({
+                type: 'POST',
+                url: '/extranet_users/edit',
+                data: { id: #{extranet_user.id}, rlcode: $('#rlcode_#{extranet_user.id}').val()},
+                success: function(data) { eval(data); }
+                });" do %>
+                  <i class="fa fa-save"></i>
+              <% end%>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <%= will_paginate @extranet_users %>
+    </div>
+  </div>
+</div><!-- /.row -->

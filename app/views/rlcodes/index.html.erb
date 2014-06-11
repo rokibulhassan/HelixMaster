@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-lg-7">
+    <h2>RL Codes</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover ">
+        <thead>
+        <tr>
+          <th>Code </th>
+          <th>Summary </th>
+          <th>Resource</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @rlcodes.each do |code| %>
+        <tr>
+              <td><%= code.code%></td>
+              <td><%= code.summary%></td>
+              <td><%= link_to code.file_path.split('/').last, code.file_path, :target => '_blank' %></td>
+        </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= will_paginate @rlcodes %>
+    </div>
+  </div>
+</div><!-- /.row -->

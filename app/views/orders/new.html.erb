@@ -1,0 +1,192 @@
+<style type="text/css">
+    .form input[type="text"]{
+        display:block;
+        background:#fff;
+        border:1px solid #ddd;
+        padding: 2px 5px;
+        width: 146px;
+        margin:0;
+        font-size:12px;
+        height:25px;
+        color:#000;
+        box-shadow: 0 1px 0 #7c7c7c inset, 0 2px 1px #f0f0f0 inset;
+        -webkit-box-shadow: 0 1px 0 #7c7c7c inset, 0 2px 1px #f0f0f0 inset;
+    }
+</style>
+<div id="main">
+  <div id="content">
+    <div class="heading">
+      <h2>buy kit now</h2>
+    </div>
+    <form id="orderForm" action="<%= post_back_orders_path %>" method="POST" novalidate class="form">
+
+    <!-- Dreamhost form mail config -->
+      <input type=hidden name="recipient" value="orders#helixtesting.com">
+      <input type=hidden name="subject" value="Helix Order Submission">
+      <input type=hidden name="redirect" value="http://www.helixtesting.com/beta/order-postback.php">
+
+      <fieldset>
+        <div class="section-box">
+          <h3 class="title">Select a Kit</h3>
+
+          <div class="column">
+            <img class="alignleft" src="/assets/img-04.png" width="119" height="152" alt="image description"/>
+
+            <div class="description">
+              <input required="required" data-error-message="Please select a package" type="radio" id="package" value="Gold Collection" name="package"/>
+
+              <div class="box">
+                <label for="radio-3" class="head">
+                  <strong>Gold Collection</strong>
+                  <span>Kit and Paternity testing</span>
+                </label>
+
+                <p><strong class="mark">150,000 Naira</strong> per kit</p>
+                <ul class="list-2">
+                  <li>Tests for one (1) alleged father and one (1) child</li>
+                  <li>25 Loci DNA test <a href="#" class="question"></a></li>
+                  <li>Discreetly packaged in plain brown envelope</li>
+                  <li>Next day delivery</li>
+                  <li>Results available in 3-5 business days</li>
+                  <li>Free delivery anywhere in Nigeria</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="column column-2">
+            <img class="alignleft" src="/assets/img-04.png" width="119" height="152" alt="image description"/>
+
+            <div class="description">
+              <input type="radio" id="package2" value="Silver Collection" name="package"/>
+
+              <div class="box">
+                <label for="radio-4" class="head">
+                  <strong>Silver Collection</strong>
+                  <span>Kit and Paternity testing</span>
+                </label>
+                <span><strong class="mark">150,000 Naira</strong> per kit</span>
+                <ul class="list-2">
+                  <li>Tests for one (1) alleged father and one (1) child</li>
+                  <li>16 Loci DNA test <a href="#" class="question"></a></li>
+                  <li>Discreetly packaged in plain brown envelope</li>
+                  <li>Delivery in 7 business days</li>
+                  <li>Results available in 5-10 business days</li>
+                  <li>Free delivery anywhere in Lagos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br/><br/><br/>
+
+        <div class="section-box section-box-2">
+          <h3 class="title">Customer Info</h3>
+
+          <div class="col">
+            <h4>Personal Info</h4>
+
+            <div class="row-area">
+              <div class="row">
+                <label for="name">First Name<sup class="required">*</sup></label>
+                <input required="required" type="text" name="firstname" id="name"/>
+              </div>
+              <div class="row">
+                <label for="surname">Last Name<sup class="required">*</sup></label>
+                <input required="required" type="text" name="surname" id="surname"/>
+              </div>
+
+            </div>
+            <div class="row-area">
+              <div class="row">
+                <label for="email">Email<sup class="required">*</sup></label>
+                <input required="required" type="text" name="email" id="email"/>
+              </div>
+            </div>
+            <div class="row-area">
+              <div class="row">
+                <label for="age">Age<sup class="required">*</sup></label>
+                <input data-type="number" data-error-message="Enter a valid age" data-minlength="2" required="required" type="text" name="age" id="age"/>
+              </div>
+              <div class="row">
+                <label for="gender">Gender<sup class="required">*</sup></label>
+                <select data-notblank="true" required="required" name="gender" id="gender">
+                  <option></option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="row-area">
+              <label for="phone">Telephone<sup class="required">*</sup></label>
+              <input data-type="number" required="required" type="text" id="phone" name="phone" class="long"/>
+            </div>
+          </div>
+          <div class="col col-2">
+            <h4>
+									<span class="add-text">
+										<span class="by">Shipping by <img src="/assets/ico-16.png" width="36" height="26" alt="image description"/></span>
+									</span>
+              Shipping Info
+            </h4>
+
+            <div class="row-area">
+              <label for="address">Address (street, block, house, number)<sup class="required">*</sup></label>
+              <input required="required" type="text" id="address" name="address" class="long"/>
+            </div>
+            <div class="row-area">
+              <label for="details">Address (additional details)</label>
+              <input type="text" id="details" name="details" class="long"/>
+            </div>
+            <div class="row-area">
+              <label for="state">State/Region<sup class="required">*</sup></label>
+              <input type="text" id="state" name="state" class="long" required="required"/>
+              <!--
+<select data-notblank="true" name="state" required="required" class="long-select" id="state">
+                  <option> </option>
+                  <option>state2</option>
+                  <option>state3</option>
+              </select>
+-->
+            </div>
+            <div class="row-area">
+              <label for="city">City<sup class="required">*</sup></label>
+              <input type="text" id="city" name="city" class="long" required="required"/><!--
+<select data-notblank="true" name="city" required="required" class="long-select" id="city">
+										<option> </option>
+										<option>city2</option>
+										<option>city3</option>
+									</select>
+ -->
+            </div>
+          </div>
+        </div>
+        <br/><br/><br/>
+
+        <div class="section-box section-payment">
+          <h3 class="title">Payment Method</h3>
+
+          <div class="row">
+            <input required="required" type="radio" name="payment" value="Pay on Delivery" id="delivery"/>
+            <label for="delivery">
+              <img src="/assets/ico-13.png" width="39" height="24" alt="image description"/>
+              <span><strong>Pay on Delivery</strong> (Lagos Only)</span>
+            </label>
+          </div>
+          <div class="row row-2">
+            <input required="required" type="radio" value="Bank Deposit" name="payment" id="deposit"/>
+            <label for="deposit">
+              <img src="/assets/ico-14.png" width="32" height="29" alt="image description"/>
+              <span><strong>Bank Deposit</strong></span>
+              <img src="/assets/ico-15.png" width="191" height="27" alt="image description"/>
+            </label>
+          </div>
+        </div>
+        <div class="submit-box">
+          <div class="input"><input id="submit" type="submit" value="Place Order"/></div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+

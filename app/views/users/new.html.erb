@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-lg-4">
+    <h2>Manage Users</h2>
+    <p id="notice"><%= flash[:notice] %><%= flash[:error] %></p>
+    <%= link_to 'new user', :action => 'new' %>
+    <%= form_tag :action=>"edit", :id => @user.id do %>
+        <div class="form-group">
+          <label for='user_email'>Email</label>
+          <%= text_field :user, :email, :class=>"form-control", :placeholder=>"example@example.com" %>
+        </div>
+        <div class="form-group">
+          <label for='user_password'>Password</label>
+          <%= text_field :user, :password, :class=>"form-control", :placeholder=>"Password" %>
+        </div>
+        <div class="form-group">
+          <label for='user_role'>Role</label>
+          <%= collection_select :user, :role, User::ROLES, :to_s, :humanize, {:prompt => 'Select role'}, {:class => 'form-control'} %>
+        </div>
+        <div class='form-actions'>
+          <button type="submit" class="btn btn-default">Save</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </div>
+    <% end %>
+  </div>
+  <div class="col-lg-8">
+    <br><br><br>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th>Email </th>
+          <th>Password </th>
+          <th>Role</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+            <tr>
+              <td><%= user.email%></td>
+              <td>******</td>
+              <td><%= user.role %></td>
+              <td>
+                <%= link_to ({:action => 'edit', :id => user.id}) do %>
+                    <i class="fa fa-pencil-square-o"></i>
+                <% end%>
+                <%= link_to ({:action => 'destroy', :id => user.id}) do %>
+                    <i class="fa fa-trash-o"></i>
+                <% end%>
+          </td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <%= will_paginate @users %>
+    </div>
+  </div>
+</div><!-- /.row -->

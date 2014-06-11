@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  location_type_id: 1
+  country_id: 1
+  state_id: 1
+  city_id: 1
+  area_id: 1
+  description: MyString
+  address1: MyString
+  address2: MyString
+  telephone1: MyString
+  telephone2: MyString
+  whatsapp: MyString
+  bbm: MyString
+  hours_operation: MyString
+  website: MyString
+  kit_available_for_purchase: false
+  drop_off_location: false
+  gps_code: MyString
+  note: MyString
+  bank_name: MyString
+  bank_account_holder: MyString
+  bank_account_number: MyString
+
+two:
+  name: MyString
+  location_type_id: 1
+  country_id: 1
+  state_id: 1
+  city_id: 1
+  area_id: 1
+  description: MyString
+  address1: MyString
+  address2: MyString
+  telephone1: MyString
+  telephone2: MyString
+  whatsapp: MyString
+  bbm: MyString
+  hours_operation: MyString
+  website: MyString
+  kit_available_for_purchase: false
+  drop_off_location: false
+  gps_code: MyString
+  note: MyString
+  bank_name: MyString
+  bank_account_holder: MyString
+  bank_account_number: MyString

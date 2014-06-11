@@ -1,0 +1,136 @@
+<div class="row">
+  <div class="col-lg-4">
+    <%= form_for(@location) do |f| %>
+        <% if @location.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+              <ul>
+                <% @location.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <br/>
+          <%= f.text_field :name, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :location_type_id %>
+          <br/>
+          <%= select :location, :location_type_id, LocationType.all.collect { |c| [c.name, c.id] }, {:prompt => 'Select Location Type'}, {:class => 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :country_id %>
+          <br/>
+          <%= select :location, :country_id, Country.all.collect { |c| [c.name, c.id] }, {:prompt => 'Select Country'}, {:class => 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :state_id %>
+          <br/>
+          <%= select :location, :state_id, State.all.collect { |c| [c.name, c.id] }, {:prompt => 'Select State'}, {:class => 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :city_id %>
+          <br/>
+          <%= select :location, :city_id, City.all.collect { |c| [c.name, c.id] }, {:prompt => 'Select City'}, {:class => 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :area_id %>
+          <br/>
+          <%= select :location, :area_id, Area.all.collect { |c| [c.name, c.id] }, {:prompt => 'Select Area'}, {:class => 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :description %>
+          <br/>
+          <%= f.text_field :description, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :address1 %>
+          <br/>
+          <%= f.text_field :address1, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :address2 %>
+          <br/>
+          <%= f.text_field :address2, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :telephone1 %>
+          <br/>
+          <%= f.text_field :telephone1, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :telephone2 %>
+          <br/>
+          <%= f.text_field :telephone2, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :whatsapp %>
+          <br/>
+          <%= f.text_field :whatsapp, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :bbm %>
+          <br/>
+          <%= f.text_field :bbm, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :hours_operation %>
+          <br/>
+          <%= f.text_field :hours_operation, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :website %>
+          <br/>
+          <%= f.text_field :website, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :kit_available_for_purchase %>
+          <br/>
+          <%= f.check_box :kit_available_for_purchase %>
+        </div>
+        <div class="form-group">
+          <%= f.label :drop_off_location %>
+          <br/>
+          <%= f.check_box :drop_off_location %>
+        </div>
+        <div class="form-group">
+          <%= f.label :zip_code %>
+          <br/>
+          <%= f.text_field :gps_code, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :gps_coordinates %>
+          <br/>
+          <%= f.text_field :gps_coordinates, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :note %>
+          <br/>
+          <%= f.text_field :note, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :bank_name %>
+          <br/>
+          <%= f.text_field :bank_name, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :bank_account_holder %>
+          <br/>
+          <%= f.text_field :bank_account_holder, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :bank_account_number %>
+          <br/>
+          <%= f.text_field :bank_account_number, :class => "form-control" %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
+  </div>
+</div>

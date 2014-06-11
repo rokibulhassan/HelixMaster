@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  viewable_code: MyString
+  password: MyString
+  rl_code: MyString
+
+two:
+  viewable_code: MyString
+  password: MyString
+  rl_code: MyString

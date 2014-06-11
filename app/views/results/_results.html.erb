@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h2>Test Result</h2>
+    <% if @code %>
+        <p>Viewable code : <%= @code.code%> </p>
+        <p>Summary : <%= @code.summary%> </p>
+        <p><%= link_to 'Click here to download full Results (PDF)', @code.file_path, :target => '_blank' %></p>
+    <% else %>
+        <p>You have no result yet</p>
+    <%end%>
+  </div>
+</div>

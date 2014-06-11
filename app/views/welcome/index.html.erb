@@ -1,0 +1,461 @@
+<div id="top">
+<div class="header-area">
+  <div id="header">
+    <div class="panel">
+      <h1 class="logo"><a href="#">Helix Testing</a></h1>
+
+      <div class="block">
+        <ul class="list">
+          <li>Nigeria’s Most Reliable Paternity Testing Service</li>
+          <li>All DNA Testing done in the USA</li>
+        </ul>
+        <div class="box">
+          <a href="#" class="btn btn-chat">Chat Online</a>
+          <span>Questions? call</span>
+          <a href="#" class="btn"> +234 (0) 810 683 6432</a>
+          <span class="or">OR</span>
+          <a href="#" class="btn add-btn">BB 25BC8A9F</a>
+        </div>
+        <div class="navigation">
+          <a href="orders/new" class="btn-2">buy now</a>
+          <ul id="nav">
+            <li><a href="#works">how it works</a></li>
+            <li><a href="#find">find a store</a></li>
+            <li><a href="#lab">dna labs</a></li>
+            <li><a href="#resources">resources</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ad">
+      <div class="box">
+        <span class="title">Nigeria’s <strong>most reliable</strong> paternity testing service</span>
+        <ul class="check-list">
+          <li>100% Anonymous</li>
+          <li>100% Accurate Results</li>
+          <li>Results available in 3-4 Working Days</li>
+          <li>All DNA testing done in the USA</li>
+        </ul>
+        <div class="btn-box">
+          <a href="#find" class="btn-2 btn-find">Find a Store</a>
+          <a href="orders/new" class="btn-2 btn-buy">Buy Now</a>
+        </div>
+      </div>
+      <img src="/assets/img-01.jpg" width="960" height="554" alt="image description"/>
+    </div>
+  </div>
+</div>
+<div id="main">
+<div id="works" class="section">
+  <div class="heading">
+    <img src="/assets/ico-01.png" width="59" height="59" alt="image description"/>
+
+    <h2>how it works</h2>
+  </div>
+  <div class="item-block">
+    <div class="item">
+      <div class="icon">
+        <img src="/assets/ico-10.png" width="89" height="82" alt="image description"/>
+      </div>
+      <div class="box">
+        <span class="num">1</span>
+
+        <h3>Purchase DNA Kit</h3>
+
+        <p>Purchase the kit at the following <a href="#find" class="link">Stores</a> or
+          <a href="#order" class="link">buy online</a>. The Paternity Test Kit includes the following:</p>
+        <ul class="list">
+          <li>Instructions</li>
+          <li>Sample Envelopes <br/>(1 per person)</li>
+          <li>Cheek Swabs <br/>(3 per person)</li>
+        </ul>
+        <a href="#order" class="btn-2 btn-more">buy a Kit Now</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="icon orange">
+        <img src="/assets/ico-11.png" width="111" height="99" alt="image description"/>
+      </div>
+      <div class="box">
+        <span class="num">2</span>
+
+        <h3>Collect DNA Sample</h3>
+
+        <p>Swab the inside of the cheek (between the cheek and gums) with each of the 3 swabs per person (
+          <a href="#resources" class="link">see video</a>). Place all 3 swabs (for one person) into the Sample Envelope.
+          Repeat this for each person in the test. Use one Sample Envelope per person. Our service is 100% confidential
+          and anonymous, so your name or any private information is NOT required.</p>
+        <a href="#lab" class="btn-2 btn-more">More about DNA Lab</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="icon blue">
+        <img src="/assets/ico-12.png" width="105" height="106" alt="image description"/>
+      </div>
+      <div class="box">
+        <span class="num">3</span>
+
+        <h3>Drop Off Kit</h3>
+
+        <p>Collection kits can be dropped off at any of the <a href="#find" class="link">following locations</a>.</p>
+        <a href="#find" class="btn-2 btn-more">Drop Off Locations </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="buy" class="section-area section-buy">
+  <div class="section">
+    <div class="heading">
+      <img src="/assets/ico-02.png" width="64" height="49" alt="image description"/>
+
+      <h2>buy kit now</h2>
+    </div>
+    <div class="columns">
+      <div class="visual">
+        <img class="alignleft" src="/assets/img-02.png" width="649" height="377" alt="image description"/>
+
+        <div class="btn-box-2">
+          <a href="#find" class="btn-2 btn-find">Find a Store</a>
+          <a href="orders/new" class="btn-2 btn-buy">Buy Now</a>
+        </div>
+      </div>
+      <div class="text-holder">
+        <span class="caption">helix test kit</span>
+        <ul class="list-2">
+          <li>Tests for one (1) alleged father and one (1) child</li>
+          <li>Discreetly delivered in plain brown envelope</li>
+          <li>Next day delivery available</li>
+          <li>Free delivery in Lagos or anywhere in Nigeria available</li>
+        </ul>
+        <strong>Test kit includes the following:</strong>
+        <ul class="list-2">
+          <li>Easy Instructions</li>
+          <li>Sample Envelopes (1 per person)</li>
+          <li>Cheek Swabs (3 per person)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="find" class="section-area section-find">
+  <div class="section">
+    <div class="heading white">
+      <img src="/assets/ico-03.png" width="84" height="66" alt="image description"/>
+
+      <h2>find a store</h2>
+    </div>
+    <div class="block-holder">
+      <%= form_tag(search_stores_path, remote: true, :method => :get, :class => "custom-form") do %>
+          <fieldset>
+            <span class="caption-2">where to buy?</span>
+            <span>Just use the form below to find a stroe near you.</span>
+
+            <div class="row-area">
+              <%= select_tag :country, options_from_collection_for_select(Country.all, "id", "name"), {:prompt => 'Select Country'} %>
+              <%= select_tag :state, options_from_collection_for_select(State.all, "id", "name"), {:prompt => 'Select State'} %>
+              <%= select_tag :city, options_from_collection_for_select(City.all, "id", "name"), {:prompt => 'Select City'} %>
+              <%= select_tag :area, options_from_collection_for_select(Area.all, "id", "name"), {:prompt => 'Select Area'} %>
+              <div class="row-btn">
+                <input type="submit" value="Find a Store"/>
+              </div>
+            </div>
+
+          </fieldset>
+      <% end %>
+      <ul class="location" id="search_results"></ul>
+    </div>
+  </div>
+</div>
+<div id="lab" class="section-area section-lab">
+  <div class="section">
+    <div class="heading grey">
+      <img src="/assets/ico-04.png" width="50" height="74" alt="image description"/>
+
+      <h2>dna laboratory</h2>
+    </div>
+    <div class="block">
+      <div class="video-section">
+        <div class="video-block">
+          <div class="video">
+            <iframe width="392" height="266" src="//www.youtube.com/embed/qeSA9Ccpwok?list=PL5FF8EFE79298BBBB" frameborder="0" allowfullscreen></iframe>
+            <!-- <img src="images/video.jpg" width="392" height="266" alt="image description" /> -->
+            <!-- <a href="#" class="btn-play">play</a> -->
+          </div>
+        </div>
+        <div class="add-box">
+          <a href="#" class="link-play">Play video for more information on the laboratory and testing
+            facilities.</a>
+
+          <div class="btn-box-2">
+            <a href="#find" class="btn-2 btn-find">Find a Store</a>
+            <a href="orders/new" class="btn-2 btn-buy">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-block">
+        <span class="caption-3">dna testing facilities</span>
+        <strong class="intro">All paternity tests are performed by DNA Diagnostics, based in the United
+          States. For over
+          a decade, DNA Diagnostics (DDC) has been the largest provider of private DNA paternity and other
+          DNA tests in
+          the U.S. and worldwide.</strong>
+
+        <p>DDC was founded on the belief that the technological advancements in DNA testing should translate
+          to services
+          that are accessible and affordable to everyone. It was the first to adopt robotics technology in
+          its
+          laboratory processes, ensuring highly stringent and efficient handling of DNA samples. DDC’s
+          unique Dual
+          Process TM, in which all DNA samples are independently tested twice, produces results of unmatched
+          quality and
+          reliability.</p>
+
+        <p>With over 1,000,000 DNA tests performed and 19 perfect inspections of its labs over the past 15
+          years, DDC is
+          proven to be the world leader in DNA paternity testing. Please watch the video on the right for
+          more
+          information.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="resources" class="section-area section-resources">
+  <div class="section">
+    <div class="heading white">
+      <img src="/assets/ico-05.png" width="60" height="52" alt="image description"/>
+
+      <h2>resources</h2>
+    </div>
+    <div class="block block-2">
+      <div class="video-section">
+        <div class="video-block">
+          <div class="video">
+            <iframe width="392" height="266" src="//www.youtube.com/embed/Ab3fO726pik?list=PL5FF8EFE79298BBBB" frameborder="0" allowfullscreen></iframe>
+            <!-- <img src="images/video-2.jpg" width="392" height="266" alt="image description" /> -->
+            <!-- <a href="#" class="btn-play">play</a> -->
+          </div>
+        </div>
+      </div>
+      <div class="text-block">
+        <div class="text">
+          <span class="caption-3">want to find out more?</span>
+
+          <p>This educational video series shows how DNA testing works by providing a detailed look at the
+            science
+            involved with DNA paternity testing at DDC.</p>
+        </div>
+        <div class="btn-box-2">
+          <a href="#find" class="btn-2 btn-find">Find a Store</a>
+          <a href="orders/new" class="btn-2 btn-buy">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="free" class="section-area section-consultation">
+  <div class="section">
+    <div class="heading">
+      <img src="/assets/ico-06.png" width="55" height="49" alt="image description"/>
+
+      <h2>free consultation</h2>
+    </div>
+    <div class="block block-3">
+      <img class="alignright" src="/assets/img-03.png" width="432" height="580" alt="image description"/>
+
+      <div class="text-block">
+        <span class="caption-3">your first step</span>
+
+        <p>Since this is probably your first DNA test, and every situation is unique, we highly recommend
+          you call our
+          paternity experts to ensure you get the test that's right for you.</p>
+
+        <p>Your experience is confidential, friendly, and easy - no obligations.</p>
+
+        <div class="contact-btn">
+          <a href="#" class="btn btn-call">Call +234 (0) 810 683 6432</a><br>
+          <a href="#" class="btn btn-chat">Chat Online</a><br>
+          <a href="#" class="btn add-btn">bB 25BC8A9F</a><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer-area">
+  <div id="footer">
+    <div class="items">
+      <div class="box">
+        <strong class="logo"><a href="#top">Helix Testing</a></strong>
+
+        <div class="text">
+          <p>Helix Testing is Nigeria’s most reliable paternity testing service:
+          <ul>
+            <li>100% Anonymous</li>
+            <li>100% Accurate Results</li>
+            <li>Results available in 3-4 Working Days</li>
+            <li>All DNA testing done in the USA</li>
+          </ul>
+          </p>
+        </div>
+      </div>
+      <div class="box box-2">
+        <h3><a href="#order">purchase kit</a></h3>
+        <ul class="add-nav">
+          <li><a href="#how">how it works</a></li>
+          <li><a href="#find">find a store </a></li>
+          <li><a href="#lab">dna labs</a></li>
+          <li><a href="#resources">resources</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <ul class="contact-list">
+          <li>
+            <div class="img">
+              <img src="/assets/ico-07.png" width="13" height="17" alt="image description"/>
+            </div>
+            <span>Call +234 (0) 810 683 6432</span>
+          </li>
+          <li>
+            <div class="img">
+              <img src="/assets/ico-08.png" width="19" height="17" alt="image description"/>
+            </div>
+            <span><a href="#">Chat Online</a></span>
+          </li>
+          <li>
+            <div class="img">
+              <img src="/assets/ico-09.png" width="17" height="12" alt="image description"/>
+            </div>
+            <span>BB 25BC8A9F</span>
+          </li>
+        </ul>
+        <p>Copyright &copy;2013 Helix Testing</p>
+        <a href="terms" class="link">Legal/Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<ul class="side-menu">
+  <li><a class="top" href="#top">top</a></li>
+  <li><a class="works" href="#works">how it <br/>works</a></li>
+  <li><a class="buy" href="orders/new">buy now</a></li>
+  <li><a class="find" href="#find">find store</a></li>
+  <li><a class="lab" href="#lab">dna lab</a></li>
+  <li><a class="resources" href="#resources">resources</a></li>
+  <li><a class="free" href="#free">free <br/>consultation</a></li>
+</ul>
+
+<style>
+    .drop-list {
+        height: auto !important;
+    }
+    .btn {
+        display: inline-block;
+        color: #fff;
+        font: 14px/16px Helvetica3, Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        border-radius: 20px;
+        background: #747474;
+        font-weight: bold;
+        padding: 5px 13px 5px 31px;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .btn-chat {
+        text-align: center;
+        min-width: 140px;
+        padding: 5px 8px 5px 29px;
+        background: #2b999a;
+        font-size: 14px;
+    }
+
+    .contact-btn .btn-chat, .contact-btn .add-btn {
+        min-width: 315px;
+        margin: 0 0 10px;
+        text-align: left;
+        font-size: 20px;
+        line-height: 22px;
+        background: #2b999a;
+        padding: 4px 10px 3px 45px;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    }
+</style>
+
+<script type="application/javascript">
+    $("#country").change(function () {
+        var country = $(this).val();
+        var state_items = "<option value=>Select State</option>";
+        var city_items = "<option value=>Select City</option>";
+        $.ajax({
+            type: 'GET',
+            dataType: "json",
+            url: "<%= load_state_states_path %>",
+            data: { country: country},
+            success: function (data) {
+                $.each(data, function (index, items) {
+
+                    if (index == 'states') {
+                        $.each(items, function (index, item) {
+                            state_items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                        });
+                    }
+
+                    if (index == 'cities') {
+                        $.each(items, function (index, item) {
+                            city_items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                        });
+                    }
+
+                });
+                $("#state").html(state_items);
+                $('#state')[0].jcf.buildDropdown();
+                $('#state')[0].jcf.refreshState();
+
+//                $("#city").html(city_items);
+//                $('#city')[0].jcf.buildDropdown();
+//                $('#city')[0].jcf.refreshState();
+            }
+        });
+    });
+
+//    $("#state").change(function () {
+//        var state = $(this).val();
+//        var items = "<option value=>Select City</option>";
+//        $.ajax({
+//            type: 'GET',
+//            dataType: "json",
+//            url: "<%#= load_city_cities_path %>",
+//            data: { state: state},
+//            success: function (data) {
+//                $.each(data, function (index, item) {
+//                    items += "<option value='" + item.id + "'>" + item.name + "</option>";
+//                });
+//                $("#city").html(items);
+//                $('#city')[0].jcf.buildDropdown();
+//                $('#city')[0].jcf.refreshState();
+//            }
+//        });
+//    });
+
+    $("#city").change(function () {
+        var city = $(this).val();
+        var items = "<option value=>Select Area</option>";
+        $.ajax({
+            type: 'GET',
+            dataType: "json",
+            url: "<%= load_area_areas_path %>",
+            data: { city: city},
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    items += "<option value='" + item.id + "'>" + item.name + "</option>";
+                });
+                $("#area").html(items);
+                $('#area')[0].jcf.buildDropdown();
+                $('#area')[0].jcf.refreshState();
+            }
+        });
+    });
+</script>

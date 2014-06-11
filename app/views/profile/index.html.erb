@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h2>Profile</h2>
+    <%= form_tag :action=>"edit", :id => @user.id do %>
+        <div class="form-group">
+          <label for='user_name'>Name</label>
+          <%= text_field :user, :name, :class=> "form-control", :placeholder=>"Name" %>
+        </div>
+        <div class="form-group">
+          <label for='user_email'>Email</label>
+          <%= text_field :user, :email, :class=> "form-control", :placeholder=>"example@example.com" %>
+        </div>
+        <div class="form-group">
+          <label for='user_password'>Password</label>
+          <%= text_field :user, :password, :class=> "form-control", :placeholder=>"Password" %>
+        </div>
+        <div class='form-actions'>
+          <button type="submit" class="btn btn-default">Save</button>
+        </div>
+    <% end %>
+  </div>
+</div><!-- /.row -->

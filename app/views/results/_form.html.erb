@@ -1,0 +1,20 @@
+<div class="panel-heading">
+  <h3 class="panel-title">Please Enter details</h3>
+</div>
+<% flash.each do |key, value| %>
+    <%= content_tag(:div, value, :class => "flash #{key}") %>
+<% end %>
+<div class="panel-body">
+  <%= form_for(:extranet_user, :url => '/results/get_results') do |f| %>
+      <fieldset>
+        <div class="form-group">
+          <%= f.text_field :viewable_code, :class =>"form-control", :placeholder=>"Viewable Code", :autofocus => true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password, :class =>"form-control", :placeholder=>"Password"  %>
+        </div>
+        <div><%= f.submit "Show results",:class => "btn btn-lg btn-success btn-block" %></div>
+      </fieldset>
+  <% end %>
+</div>
